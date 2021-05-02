@@ -33,7 +33,7 @@ nix_view_get_line_for_pos(Application_Links *app, View_ID view, i64 pos)
 // For insert and replace:
 // Should whitespace be entered to make up for it? may be different answers for insert / replace
 
-CUSTOM_UI_COMMAND_SIG(nix_rectangle_kill_insert_replace)
+CUSTOM_UI_COMMAND_SIG(nix_rectangle_edit)
 CUSTOM_DOC("Kill, replace or insert a rectangle bound by cursor and mark")
 {
     Scratch_Block scratch(app);
