@@ -1,9 +1,8 @@
 
+/////////////////////////////////////////////////////////////////////
+// 01110000 01110011 01100100 01110010 01101110 01100100 01101101 //
 ///////////////////////////////////////////////////////////////////
-// (C) Copyright 2021 RideController, LLC. All Rights Reserved. //
-/////////////////////////////////////////////////////////////////
-/////////////////////////////////////// nick@ridecontroller.com
-
+///////////////////////////////////////////////// nick@psdrndm.com
 
 i64
 nix_view_get_col_for_pos(Application_Links *app, View_ID view, i64 pos)
@@ -62,7 +61,7 @@ CUSTOM_DOC("Kill, replace or insert a rectangle bound by cursor and mark")
         }
         
         ///////////////////////////////////////////////////////////
-        // Do all the calculations for the rectangle to kill
+        // Do all the calculations for the rectangle
         ///////////////////////////////////////////////////////////
         
         i64 cpos = view_get_cursor_pos(app, view);
@@ -103,6 +102,8 @@ CUSTOM_DOC("Kill, replace or insert a rectangle bound by cursor and mark")
             }
         }
         
+        ///////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////
         
         Rect_f32 r = view_padded_box_of_pos(app, view, start_line, top_left_pos);
         Vec2_f32 p = { r.x0, r.y1 };
@@ -114,13 +115,9 @@ CUSTOM_DOC("Kill, replace or insert a rectangle bound by cursor and mark")
             i64 buffer_size = buffer_get_size(app, buffer_id);
             if (0 < end && end <= buffer_size) {
                 if (amount_to_kill > 0){
-                    buffer_replace_range(app,
-                                         buffer_id,
-                                         Ii64(this_pos, end),
-                                         replacement_string);
+                    buffer_replace_range(app, buffer_id, Ii64(this_pos, end), replacement_string);
                 } else {
-                    Buffer_Insertion insert = begin_buffer_insertion_at(app, buffer_id,
-                                                                        this_pos);
+                    Buffer_Insertion insert = begin_buffer_insertion_at(app, buffer_id, this_pos);
                     insertf(&insert, "%.*s", string_expand(replacement_string));
                     end_buffer_insertion(&insert);
                 }
