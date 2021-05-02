@@ -4,7 +4,7 @@
 ///////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////// nick@psdrndm.com
 
-CUSTOM_UI_COMMAND_SIG(reload_changed_buffers)
+CUSTOM_UI_COMMAND_SIG(nix_reload_changed_buffers)
 CUSTOM_DOC("Reload buffers with unloaded changes.")
 {
     Scratch_Block scratch(app);
