@@ -18,21 +18,6 @@ nix_view_get_line_for_pos(Application_Links *app, View_ID view, i64 pos)
     return (c.line);
 }
 
-
-// @NOTE
-// For kill, enter an empty string into query
-// For replace, enter a string into query with cursor and mark in different columns
-// Insert is a special case when cursor and mark are in the same column
-// The right-most column is not included in the kill/replace
-// Undo is broken, it goes one line at a time rather than all at once
-
-// @TODO
-// Handle the case where there is a line that doesn't extend fully into or past the
-// specified rectangle
-// Look for a better way to do this whole thing, it feels a bit hacky
-// For insert and replace:
-// Should whitespace be entered to make up for it? may be different answers for insert / replace
-
 CUSTOM_UI_COMMAND_SIG(nix_rectangle_edit)
 CUSTOM_DOC("Kill, replace or insert a rectangle bound by cursor and mark")
 {
