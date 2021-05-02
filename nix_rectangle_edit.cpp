@@ -30,9 +30,9 @@ nix_view_get_line_for_pos(Application_Links *app, View_ID view, i64 pos)
 // @TODO
 // Handle the case where there is a line that doesn't extend fully into or past the
 // specified rectangle
-// See if there's a better way to do this
-// For insert/replace:
-// Should whitespace be entered to make up for it? These may have different answers
+// Look for a better way to do this whole thing, it feels a bit hacky
+// For insert and replace:
+// Should whitespace be entered to make up for it? may be different answers for insert / replace
 
 CUSTOM_UI_COMMAND_SIG(nix_rectangle_kill_insert_replace)
 CUSTOM_DOC("Kill, replace or insert a rectangle bound by cursor and mark")
